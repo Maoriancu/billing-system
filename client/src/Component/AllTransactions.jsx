@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
     table: {
-        width: '90%',
-        margin: '50px 0 0 50px'
+        width: '100%',
+        margin: '50px 0 0 0'
     },
     thead: {
         '& > *': {
             fontSize: 20,
-            background: '#000000',
+            background: '#317947',
             color: '#FFFFFF'
         }
     },
@@ -78,7 +78,7 @@ const AllTransactions = () => {
                         <TableCell>{transaction.credit_card_type}</TableCell>
                         <TableCell>{transaction.credit_card_number}</TableCell>
                         <TableCell>
-                            <Button color="primary" variant="contained" style={{ marginRight: 10 }} component={Link} to={`/edit/${transaction._id}`}>Edit</Button>
+                            <Button color="primary" variant="contained" component={Link} to={`/edit/${transaction._id}`}>Edit</Button>
                             <Button color="secondary" variant="contained" onClick={() => deleteTransactionsData(transaction._id)}>Delete</Button>
                         </TableCell>
                     </TableRow>
