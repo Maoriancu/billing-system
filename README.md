@@ -2,7 +2,8 @@
 
 Since this project will hold both the client application and the server application there will be node modules in two different places. First run npm install from the server and then run npm install from the client.
 
-File structure
+File structure:
+
 client - Holds the client application
 public - This holds all of our static files
 src
@@ -11,6 +12,8 @@ Service - This folder holds a file which have all of the api methods.
 App.js - This is what renders all of our browser routes and different views
 index.js - This is what renders the react app by rendering App.js, should not change
 package.json - Defines npm behaviors and packages for the client
+
+
 server - Holds the server application
 lib - This folder holds the files which will help us in the server.
 models - This holds all of our data models
@@ -19,6 +22,8 @@ index.js - Defines npm behaviors and packages for the client
 package.json - Defines npm behaviors like the scripts defined in the next section of the README
 .gitignore - Tells git which files to ignore
 README - This file!
+
+
 Available Scripts
 In the project directory, you can run:
 
