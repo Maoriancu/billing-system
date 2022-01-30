@@ -16,7 +16,7 @@ const transactionSchema = mongoose.Schema({
   total_price: { type: Number, default: 0 },
   currency: { type: String, default: "" },
   credit_card_type: { type: String, default: "" },
-  credit_card_number: { type: Number, default: "" },
+  credit_card_number: { type: Number, default: 0 },
 });
 
 const Transaction = mongoose.model("Transaction", transactionSchema);
