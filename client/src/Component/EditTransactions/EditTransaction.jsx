@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
-import { FormGroup, FormControl, InputLabel, Input, Button, makeStyles, Typography } from '@material-ui/core';
+import { useState } from 'react';
+import { FormGroup, FormControl, InputLabel, Input, Button, Typography } from '@material-ui/core';
 import { useHistory, useParams } from 'react-router-dom';
-import { getTransactions, editTransaction } from '../Service/api';
+import { editTransaction } from '../../Service/api';
+import useStyles from './EditTransaction.css';
 
 const initialValue = {
     first_name: '',
@@ -9,16 +10,6 @@ const initialValue = {
     email: '',
     phone: ''
 }
-
-const useStyles = makeStyles({
-    container: {
-        width: '50%',
-        margin: '5% 0 0 25%',
-        '& > *': {
-            marginTop: 20
-        }
-    }
-})
 
 const EditTransaction = () => {
     const [transaction, setTransaction] = useState(initialValue);

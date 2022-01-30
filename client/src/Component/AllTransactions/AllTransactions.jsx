@@ -1,27 +1,8 @@
-import react, { useState, useEffect } from 'react';
-import { Table, TableHead, TableCell, Paper, TableRow, TableBody, Button, makeStyles } from '@material-ui/core'
-import { getTransactions, deleteTransaction } from '../Service/api';
+import { useState, useEffect } from 'react';
+import { Table, TableHead, TableCell, TableRow, TableBody, Button } from '@material-ui/core'
+import { getTransactions, deleteTransaction } from '../../Service/api';
 import { Link } from 'react-router-dom';
-
-const useStyles = makeStyles({
-    table: {
-        width: '100%',
-        margin: '50px 0 0 0'
-    },
-    thead: {
-        '& > *': {
-            fontSize: 20,
-            background: '#317947',
-            color: '#FFFFFF'
-        }
-    },
-    row: {
-        '& > *': {
-            fontSize: 18
-        }
-    }
-})
-
+import useStyles from './AllTransactions.css';
 
 const AllTransactions = () => {
     const [transactions, setTransactions] = useState([]);
@@ -45,7 +26,6 @@ const AllTransactions = () => {
         <Table className={classes.table}>
             <TableHead>
                 <TableRow className={classes.thead}>
-                    <TableCell>Id</TableCell>
                     <TableCell>First Name</TableCell>
                     <TableCell>Last Name</TableCell>
                     <TableCell>Email</TableCell>
@@ -64,7 +44,6 @@ const AllTransactions = () => {
             <TableBody>
                 {transactions.map((transaction) => (
                     <TableRow className={classes.row} key={transaction.id}>
-                        <TableCell>{transaction._id}</TableCell>
                         <TableCell>{transaction.first_name}</TableCell>
                         <TableCell>{transaction.last_name}</TableCell>
                         <TableCell>{transaction.email}</TableCell>

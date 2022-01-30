@@ -1,9 +1,11 @@
-import react, { useState } from 'react';
-import { FormGroup, FormControl, InputLabel, Input, Button, makeStyles, Typography } from '@material-ui/core';
-import { addTransaction } from '../Service/api';
+import { useState } from 'react';
+import { FormGroup, FormControl, InputLabel, Input, Button, Typography } from '@material-ui/core';
+import { addTransaction } from '../../Service/api';
 import { useHistory } from 'react-router-dom';
+import useStyles from './AddTransaction.css';
 
 const initialValue = {
+    customer_id: '',
     first_name: '',
     last_name: '',
     email: '',
@@ -17,16 +19,6 @@ const initialValue = {
     credit_card_type: '',
     credit_card_number: 0,
 }
-
-const useStyles = makeStyles({
-    container: {
-        width: '50%',
-        margin: '5% 0 0 25%',
-        '& > *': {
-            marginTop: 20
-        }
-    }
-})
 
 const AddTransaction = () => {
     const [transaction, setTransaction] = useState(initialValue);
